@@ -8,11 +8,17 @@ class BookController extends Controller
 {
 	public function index()
 	{
-		return view('welcome');
+		$books = Book::all();
+
+        return view('index', compact('books'));
 	}
 	public function create()
 	{
 		return view('create');
+	}
+	public function show($id)
+	{
+
 	}
 	public function store(Request $request)
     {
@@ -39,7 +45,7 @@ class BookController extends Controller
         'Chiper_Public_house'=> $request->get('book_binding')
       ]);
       $book->save();
-      return redirect('/books')->with('успешно', 'Книга была добавлена');
+      return redirect('/books')->with('success', 'Книга была добавлена');
     }
     //
 }
