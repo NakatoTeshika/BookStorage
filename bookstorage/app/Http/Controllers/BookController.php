@@ -12,6 +12,7 @@ class BookController extends Controller
 
         return view('index', compact('books'));
 	}
+
 	public function create()
 	{
 		return view('create');
