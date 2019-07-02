@@ -16,7 +16,8 @@
 // });
 // Добавлять книги, авторов, выводить книги и их авторов. Вывести книги, у которых более трех авторов...
 Route::resource('books', 'BookController');
-
+// Route::get('books/author','AuthorBookController@getBooksByAuthor')->name('authbook.show');
+Route::resource('authors', 'AuthorController');
 // Route::get('books', 'BookController@allBooks')->name('books');
 
 

@@ -21,7 +21,7 @@
           <td>Количество экземпляров</td>
           <td>Количество страниц</td>
           <td>Описание</td>
-          <td colspan="2">Action</td>
+          <td colspan="2">Действия</td>
         </tr>
     </thead>
     <tbody>
@@ -31,6 +31,8 @@
             <td>{{$book->Price}}</td>
             <td>{{$book->Year_of_publishing}}</td>
             <td>{{$book->Number_of_copies}}</td>
+            <td>{{$book->Number_of_pages}}</td>
+            <td>{{$book->Description}}</td>
             <td><a href="{{ route('books.edit',$book->id)}}" class="btn btn-primary">Изменить</a></td>
             <td>
                 <form action="{{ route('books.destroy', $book->id)}}" method="post">

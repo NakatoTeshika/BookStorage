@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Author;
 class Book extends Model
 {
     //
@@ -12,4 +13,8 @@ class Book extends Model
     // protected $fillable = ['Genre_ID'];
     // protected $fillable = ['Binding_ID'];
     // protected $fillable = ['Chiper_Public_house'];
+    public function authors()
+    {
+    	return $this->belongsToMany('App\Author');
+    }
 }
