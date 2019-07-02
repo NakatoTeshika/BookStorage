@@ -6,3 +6,7 @@ php artisan key:generate
 Произвести миграцию
 php artisan migrate(если происходит ошибка при миграции, проверьте файл database в папке config(возможна проблема с кодировкой)
 php artisan serve
+http://localhost:8000/books - список книг
+http://localhost:8000/books/create - добавление книги
+http://localhost:8000/authors/create - добавление автора
+http://localhost:8000/authors - список авторов
