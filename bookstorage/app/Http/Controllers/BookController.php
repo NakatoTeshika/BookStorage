@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Book;
 class BookController extends Controller
 {
 	public function index()
@@ -16,29 +16,29 @@ class BookController extends Controller
 	}
 	public function store(Request $request)
     {
-      $request->validate([
-        'book_name'=>'required',
-        'book_year'=>'required|integer',
-        'book_price'=> 'required|integer',
-        'book_qty'=>'required|integer',
-        'book_pages'=>'required|integer',
-        'book_desc'=>'required',
-        'book_genre'=>'required|integer',
-        'book_ph'=>'required|integer',
-        'book_binding'=>'required|integer'
-      ]);
+      // $request->validate([
+      //   'Name'=>'required',
+      //   'Year_of_publishing'=>'required|integer',
+      //   'Price'=> 'required|integer',
+      //   'Number_of_copies'=>'required|integer',
+      //   'Number_of_pages'=>'required|integer',
+      //   'Description'=>'required',
+      //   'Genre'=>'required|integer',
+      //   'Binding'=>'required|integer',
+      //   'Public_house'=>'required|integer'
+      // ]);
       $book = new Book([
-        'book_name' => $request->get('book_name'),
-        'book_year'=> $request->get('book_year'),
-        'book_price'=> $request->get('book_price'),
-        'book_qty' => $request->get('book_qty'),
-        'book_pages'=> $request->get('book_pages'),
-        'book_desc'=> $request->get('book_desc'),
-        'book_genre' => $request->get('book_genre'),
-        'book_ph'=> $request->get('book_ph'),
-        'book_binding'=> $request->get('book_binding')
+        'Name' => $request->get('book_name'),
+        'Year_of_publishing'=> $request->get('book_year'),
+        'Price'=> $request->get('book_price'),
+        'Number_of_copies' => $request->get('book_qty'),
+        'Number_of_pages'=> $request->get('book_pages'),
+        'Description'=> $request->get('book_desc'),
+        'Genre_ID' => $request->get('book_genre'),
+        'Binding_ID'=> $request->get('book_ph'),
+        'Chiper_Public_house'=> $request->get('book_binding')
       ]);
-      $share->save();
+      $book->save();
       return redirect('/books')->with('успешно', 'Книга была добавлена');
     }
     //
